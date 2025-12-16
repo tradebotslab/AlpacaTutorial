@@ -1,55 +1,71 @@
-# Alpaca Trading Course - Tutorial 5
+# Alpaca Trading Course - Tutorial Series
 
-## What Happened to My Order? – Checking Status & Positions
+This repository contains a series of tutorials for learning algorithmic trading with the Alpaca API.
 
-This tutorial demonstrates how to check the status of your submitted orders and view your current open positions using the Alpaca Trading API.
+## 📚 Tutorials
 
-## Prerequisites
+- **[Alpaca02](Alpaca02/)** - "Hello, Alpaca!" - Connect & Check Your Account Status
+  - Learn how to connect to the Alpaca API and retrieve basic account information
 
-- Completed Tutorial 4: You should have already run the `place_order.py` script to submit an order
-- An Order ID: Have an Order ID ready from the output of the `place_order.py` script
-- Paper Trading Account: This script should be run against your Paper Trading account where the order was placed
+- **[Alpaca04](Alpaca04/)** - Place Market Order
+  - Learn how to place a MARKET order to buy or sell a stock
+  - Files: `place_order.py`, `instructions.md`
 
-## Setup
+- **[Alpaca05](Alpaca05/)** - What Happened to My Order? – Checking Status & Positions
+  - Learn how to check the status of your submitted orders and view your current open positions
+  - Files: `check_status.py`, `instructions.md`
 
-1. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+## 🚀 Getting Started
 
-2. **Configure API Credentials**
-   - Copy `config.py.template` to `config.py`
-   - Add your Alpaca API credentials to `config.py`
-   - Get your credentials from: https://app.alpaca.markets/paper/dashboard/overview
+Each tutorial is in its own folder. Navigate to the tutorial folder you want to follow and check the `README.md` file in that folder for specific instructions.
 
-3. **Run the Script**
-   ```bash
-   python check_status.py
-   ```
+### Prerequisites
 
-## What This Script Does
+- Python 3.8 or higher (Python 3.10+ recommended)
+- An Alpaca Paper Trading Account
+- Alpaca API Keys (Paper Trading)
 
-1. **Lists Open Orders**: Shows all orders that haven't been filled or canceled yet
-2. **Checks Specific Order**: Allows you to check the status of a particular order by its ID
-3. **Displays Current Positions**: Shows all stocks you currently own after buy orders have been filled
+### General Setup
 
-## Understanding the Workflow
+1. Navigate to the tutorial folder (e.g., `Alpaca02`, `Alpaca04`, or `Alpaca05`)
+2. Install dependencies: `pip install -r requirements.txt`
+3. Configure your API keys in `config.py` (create from template if needed)
+4. Run the tutorial script
 
-1. **Submit Order**: Run `place_order.py` to submit a buy order. The API returns an Order object with a unique ID and status like `accepted`.
-2. **Order Fills**: The exchange processes your order, and its status changes to `filled`.
-3. **Check Status**: Run `check_status.py` to confirm the order was filled.
-4. **Position Opens**: Once the order is filled, `api.list_positions()` will show your new holding as an open position.
+## 📁 Repository Structure
 
-## Important Notes
+```
+AlpacaTutorial/
+│
+├── Alpaca02/              # Tutorial 2: Hello Alpaca
+│   ├── hello_alpaca.py   # Main script
+│   ├── README.md         # Tutorial-specific documentation
+│   ├── requirements.txt  # Python dependencies
+│   └── ...
+│
+├── Alpaca04/              # Tutorial 4: Place Market Order
+│   ├── place_order.py    # Main script
+│   ├── README.md         # Tutorial-specific documentation
+│   ├── requirements.txt  # Python dependencies
+│   ├── instructions.md   # Detailed tutorial instructions
+│   └── ...
+│
+├── Alpaca05/              # Tutorial 5: Check Order Status & Positions
+│   ├── check_status.py   # Main script
+│   ├── README.md         # Tutorial-specific documentation
+│   ├── requirements.txt  # Python dependencies
+│   ├── instructions.md   # Detailed tutorial instructions
+│   └── ...
+│
+└── README.md             # This file
+```
 
-- **API Keys**: Never commit `config.py` to version control. It's already in `.gitignore`.
-- **Paper Trading**: This script uses the paper trading environment by default for safe learning.
-- **Order ID**: To check a specific order, replace `YOUR_ORDER_ID_HERE` in the script with an actual Order ID from a previous trade.
+## 🔒 Security
 
-## Error Handling
+- **Never commit `config.py`** - It contains your API keys
+- Each tutorial folder has its own `.gitignore` to protect sensitive files
+- Always use Paper Trading keys for tutorials
 
-All API calls are wrapped in try-except blocks with logging to help you understand what went wrong if something fails.
+## 📝 License
 
-## License
-
-This is an educational project for learning algorithmic trading with Alpaca.
+This tutorial series is part of an educational course on algorithmic trading with Alpaca.
