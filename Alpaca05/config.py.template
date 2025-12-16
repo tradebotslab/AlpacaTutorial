@@ -1,0 +1,11 @@
+# config.py
+# IMPORTANT: This is a template file. Copy this to config.py and add your actual API credentials.
+# The config.py file is in .gitignore to protect your API keys.
+
+# Alpaca API Credentials
+# Get these from: https://app.alpaca.markets/paper/dashboard/overview
+API_KEY = "YOUR_API_KEY_HERE"
+SECRET_KEY = "YOUR_SECRET_KEY_HERE"
+
+# Paper Trading URL (default for learning and testing)
+BASE_URL = "https://paper-api.alpaca.markets"

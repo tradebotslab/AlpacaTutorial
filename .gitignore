@@ -3,23 +3,43 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
+<<<<<<< HEAD
 
 # Virtual environments
 venv/
 env/
 ENV/
+=======
+.Python
+
+# Configuration files with sensitive data
+config.py
+>>>>>>> 8f9521e629ea031fdf808e9aede5525ec2356517
 
 # IDE configuration
 .cursorrules
 .vscode/
 .idea/
 
+<<<<<<< HEAD
 # Configuration files with sensitive data
 config.py
 
 # Logs
 *.log
+=======
+# Virtual environment
+venv/
+env/
+ENV/
+>>>>>>> 8f9521e629ea031fdf808e9aede5525ec2356517
 
 # OS files
 .DS_Store
 Thumbs.db
+<<<<<<< HEAD
+=======
+
+# Logs
+*.log
+>>>>>>> 8f9521e629ea031fdf808e9aede5525ec2356517
