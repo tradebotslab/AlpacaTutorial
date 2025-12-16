@@ -1,49 +1,69 @@
-# Alpaca Trading Course - Tutorial Series
+# Alpaca Trading Bot - Tutorial 9
 
-This repository contains a series of tutorials for learning algorithmic trading with the Alpaca API.
+## Simple Exit Logic – Selling on a Reversal Signal
 
-## 📚 Tutorials
+This tutorial implements a complete moving average crossover trading bot with both entry and exit logic.
 
-- **[Alpaca02](Alpaca02/)** - "Hello, Alpaca!" - Connect & Check Your Account Status
-  - Learn how to connect to the Alpaca API and retrieve basic account information
+## Strategy Overview
 
-## 🚀 Getting Started
+- **Entry Signal (Golden Cross)**: Buy when the short-term SMA (20-day) crosses above the long-term SMA (50-day)
+- **Exit Signal (Death Cross)**: Sell when the short-term SMA (20-day) crosses below the long-term SMA (50-day)
 
-Each tutorial is in its own folder. Navigate to the tutorial folder you want to follow and check the `README.md` file in that folder for specific instructions.
-
-### Prerequisites
-
-- Python 3.8 or higher (Python 3.10+ recommended)
-- An Alpaca Paper Trading Account
-- Alpaca API Keys (Paper Trading)
-
-### General Setup
-
-1. Navigate to the tutorial folder (e.g., `Alpaca02`)
-2. Install dependencies: `pip install -r requirements.txt`
-3. Configure your API keys in `config.py` (create from template if needed)
-4. Run the tutorial script
-
-## 📁 Repository Structure
+## Project Structure
 
 ```
-AlpacaTutorial/
-│
-├── Alpaca02/              # Tutorial 2: Hello Alpaca
-│   ├── hello_alpaca.py   # Main script
-│   ├── README.md         # Tutorial-specific documentation
-│   ├── requirements.txt  # Python dependencies
-│   └── ...
-│
-└── README.md             # This file
+Alpaca09/
+├── config.py              # API credentials (NOT in git)
+├── crossover_bot_v1.py   # Main bot script
+├── requirements.txt       # Python dependencies
+├── instructions.md        # Tutorial instructions
+├── README.md             # This file
+└── .gitignore            # Git ignore rules
 ```
 
-## 🔒 Security
+## Setup Instructions
 
-- **Never commit `config.py`** - It contains your API keys
-- Each tutorial folder has its own `.gitignore` to protect sensitive files
-- Always use Paper Trading keys for tutorials
+1. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## 📝 License
+2. **Configure API Keys**
+   - Copy `config.py` and add your Alpaca API credentials
+   - Get your API keys from: https://app.alpaca.markets/paper/dashboard/overview
+   - The bot uses paper trading by default (configured in `config.py`)
 
-This tutorial series is part of an educational course on algorithmic trading with Alpaca.
+3. **Run the Bot**
+   ```bash
+   python crossover_bot_v1.py
+   ```
+
+## Features
+
+- ✅ Position checking before trading
+- ✅ Golden Cross entry detection
+- ✅ Death Cross exit detection
+- ✅ Error handling for API calls
+- ✅ Paper trading environment by default
+- ✅ Graceful shutdown with Ctrl+C
+
+## Important Notes
+
+- **This bot uses paper trading by default** - no real money is at risk
+- **API keys are stored in `config.py`** - this file is excluded from version control
+- The bot checks for signals every 5 minutes
+- The bot uses daily bar data for SMA calculations
+
+## Code Philosophy
+
+This code follows educational principles:
+- Clear, descriptive variable names
+- Comments explain "WHY", not "WHAT"
+- One action per line
+- Explicit error handling
+- Functions with single responsibility
+
+## License
+
+Educational project for learning algorithmic trading with Alpaca API.
+

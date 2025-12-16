@@ -5,7 +5,7 @@ __pycache__/
 *.so
 .Python
 
-# Configuration files with sensitive data
+# API Configuration (contains sensitive keys)
 config.py
 
 # IDE configuration
@@ -13,10 +13,9 @@ config.py
 .vscode/
 .idea/
 
-# Virtual environment
-venv/
-env/
-ENV/
+# Environment variables
+.env
+.env.local
 
 # OS files
 .DS_Store
