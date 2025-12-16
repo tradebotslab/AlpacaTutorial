@@ -3,24 +3,20 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
-.Python
 
-# Configuration files with sensitive data
-config.py
+# Virtual environments
+venv/
+env/
+ENV/
 
 # IDE configuration
 .cursorrules
 .vscode/
 .idea/
 
-# Virtual environment
-venv/
-env/
-ENV/
+# Configuration files with sensitive data
+config.py
 
 # OS files
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log

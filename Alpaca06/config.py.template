@@ -1,0 +1,14 @@
+# config.py
+# IMPORTANT: Rename this file to config.py and add your actual API keys
+# This file should be added to .gitignore to prevent committing sensitive keys
+
+# Your Alpaca API Key (from https://app.alpaca.markets/paper/dashboard/overview)
+API_KEY = "YOUR_API_KEY_HERE"
+
+# Your Alpaca Secret Key
+SECRET_KEY = "YOUR_SECRET_KEY_HERE"
+
+# Base URL for Alpaca API
+# Default to paper trading environment for safety
+BASE_URL = "https://paper-api.alpaca.markets"
+

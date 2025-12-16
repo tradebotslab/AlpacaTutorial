@@ -1,0 +1,26 @@
+# API Configuration (contains sensitive keys)
+config.py
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE configuration
+.vscode/
+.idea/
+
+# Environment variables
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
