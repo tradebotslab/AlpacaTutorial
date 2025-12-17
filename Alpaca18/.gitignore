@@ -1,0 +1,19 @@
+# API Keys and sensitive data
+config.py
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+
+# IDE configuration
+.cursorrules
+
+# Logs
+*.log
+
+
