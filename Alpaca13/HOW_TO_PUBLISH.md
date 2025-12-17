@@ -1,104 +1,130 @@
-# 📦 Jak Opublikować Tutorial 13 na GitHubie
+# 📦 Jak Opublikować Tutorial na GitHubie
 
 ## ✅ Co Jest Już Gotowe
 
-Wszystkie pliki są już przygotowane w folderze `Alpaca13`:
-- ✅ `dynamic_sizing_bot.py` - Pełna implementacja bota z dynamicznym position sizing
+Wszystkie pliki są przygotowane w folderach `AlpacaXX` (Alpaca13, Alpaca14, Alpaca15, itd.):
+- ✅ Główny skrypt bota (np. `dynamic_sizing_bot.py`)
 - ✅ `README.md` - Kompletna dokumentacja
 - ✅ `requirements.txt` - Zależności Python
 - ✅ `config.example.py` - Szablon konfiguracji
 - ✅ `.gitignore` - Ochrona kluczy API
 - ✅ `instructions.md` - Szczegółowe instrukcje tutoriala
 
-## 🚀 Kroki do Opublikowania
+## 🚀 Metoda Zalecana: Dodaj Folder do Głównego Repozytorium
 
-### Krok 1: Utwórz Nowe Repozytorium na GitHubie
+**To jest właściwa metoda!** Wszystkie tutoriale (Alpaca02, Alpaca04, ..., Alpaca13, Alpaca14, itd.) powinny być w jednym repozytorium jako oddzielne foldery.
 
-1. Zaloguj się na GitHub: https://github.com
-2. Kliknij przycisk **"+"** w prawym górnym rogu
-3. Wybierz **"New repository"**
-4. Wypełnij formularz:
-   - **Repository name**: `AlpacaTutorial-13-PositionSizing` (lub inna nazwa)
-   - **Description**: `Tutorial 13: Never Risk Too Much - Dynamic Position Sizing for Alpaca Trading`
-   - **Visibility**: Public lub Private (Twój wybór)
-   - ⚠️ **NIE ZAZNACZAJ**: "Initialize this repository with a README"
-   - ⚠️ **NIE DODAWAJ**: .gitignore ani licencji
-5. Kliknij **"Create repository"**
-
-### Krok 2: Przejdź do Folderu Alpaca13
-
-Otwórz PowerShell i przejdź do folderu z tutorialem:
+### Krok 1: Przejdź do Głównego Folderu AlpacaTutorial
 
 ```powershell
-cd "C:\Users\tcieslar004\OneDrive - PwC\Desktop\Projekty\AlpacaTradingCourse\AlpacaTutorial\Alpaca13"
+cd "C:\Users\tcieslar004\OneDrive - PwC\Desktop\Projekty\AlpacaTradingCourse\AlpacaTutorial"
 ```
 
-### Krok 3: Zainicjalizuj Repozytorium Git
+### Krok 2: Usuń Lokalny .git z Folderu Tutoriala (jeśli istnieje)
 
 ```powershell
-# Zainicjalizuj Git w tym folderze
-git init
-
-# Sprawdź status - powinieneś zobaczyć wszystkie pliki
-git status
+# WAŻNE: Usuń .git tylko z folderu tutoriala, nie z głównego repo!
+# Zastąp AlpacaXX numerem swojego tutoriala (np. Alpaca13, Alpaca14, itd.)
+Remove-Item -Recurse -Force "AlpacaXX\.git"
 ```
 
-### Krok 4: Dodaj Pliki do Git
+**Przykład dla różnych tutoriali:**
+```powershell
+Remove-Item -Recurse -Force "Alpaca13\.git"  # Tutorial 13
+Remove-Item -Recurse -Force "Alpaca14\.git"  # Tutorial 14
+Remove-Item -Recurse -Force "Alpaca15\.git"  # Tutorial 15
+```
+
+### Krok 3: Dodaj Folder do Głównego Repozytorium
 
 ```powershell
-# Dodaj wszystkie pliki (oprócz tych w .gitignore)
-git add .
+# Dodaj folder tutoriala (zastąp XX numerem tutoriala)
+git add AlpacaXX/
 
 # Sprawdź co zostanie zacommitowane
 git status
 ```
 
-Powinieneś zobaczyć:
-- ✅ dynamic_sizing_bot.py
-- ✅ README.md
-- ✅ requirements.txt
-- ✅ config.example.py
-- ✅ .gitignore
-- ✅ instructions.md
-- ❌ config.py (jeśli istnieje - chronione przez .gitignore)
-
-### Krok 5: Wykonaj Commit
-
+**Przykłady:**
 ```powershell
-git commit -m "Tutorial 13: Never Risk Too Much - Dynamic Position Sizing Implementation"
+git add Alpaca13/  # Tutorial 13
+git add Alpaca14/  # Tutorial 14
+git add Alpaca15/  # Tutorial 15
 ```
 
-### Krok 6: Połącz z GitHubem i Wypchnij Kod
+Powinieneś zobaczyć wszystkie pliki z folderu jako "new file":
+- ✅ AlpacaXX/[nazwa_skryptu].py
+- ✅ AlpacaXX/README.md
+- ✅ AlpacaXX/requirements.txt
+- ✅ AlpacaXX/config.example.py
+- ✅ AlpacaXX/.gitignore
+- ✅ AlpacaXX/instructions.md
+- ❌ AlpacaXX/config.py (chronione przez .gitignore)
 
-**WAŻNE**: Zastąp `YOUR_USERNAME` i `REPO_NAME` własnymi wartościami z Kroku 1!
+### Krok 4: Wykonaj Commit
 
 ```powershell
-# Dodaj zdalne repozytorium
+# Zastąp numer i nazwę tutoriala odpowiednimi wartościami
+git commit -m "Add Tutorial XX (AlpacaXX) - Nazwa Tutoriala"
+```
+
+**Przykłady commit messages:**
+```powershell
+git commit -m "Add Tutorial 13 (Alpaca13) - Dynamic Position Sizing"
+git commit -m "Add Tutorial 14 (Alpaca14) - Trailing Stop Loss"
+git commit -m "Add Tutorial 15 (Alpaca15) - Multiple Timeframes"
+```
+
+### Krok 5: Wypchnij na GitHuba
+
+```powershell
+git push origin main
+```
+
+### ✅ Gotowe!
+
+Odśwież stronę GitHub - nowy folder pojawi się obok innych tutoriali:
+```
+AlpacaTutorial/
+├── Alpaca02/
+├── Alpaca04/
+├── Alpaca05/
+├── ...
+├── Alpaca13/
+├── Alpaca14/  ← Twój nowy tutorial!
+├── Alpaca15/
+└── ...
+```
+
+---
+
+## 🆕 Metoda Alternatywna: Osobne Repozytorium (NIE Zalecane)
+
+Jeśli z jakiegoś powodu chcesz utworzyć osobne repozytorium dla pojedynczego tutoriala:
+
+### Krok 1: Utwórz Nowe Repozytorium na GitHubie
+
+1. Przejdź do: https://github.com/new
+2. Nazwa: `AlpacaTutorial-XX-NazwaTutoriala`
+3. Opis: Krótki opis tutoriala
+4. Visibility: Public lub Private
+5. ⚠️ **NIE ZAZNACZAJ**: "Initialize with README"
+6. Kliknij **"Create repository"**
+
+### Krok 2: Zainicjalizuj Git w Folderze Tutoriala
+
+```powershell
+cd "C:\Users\tcieslar004\OneDrive - PwC\Desktop\Projekty\AlpacaTradingCourse\AlpacaTutorial\AlpacaXX"
+git init
+git add .
+git commit -m "Initial commit: Tutorial XX"
+git branch -M main
+```
+
+### Krok 3: Połącz z GitHubem
+
+```powershell
 git remote add origin https://github.com/YOUR_USERNAME/REPO_NAME.git
-
-# Ustaw główną gałąź na main
-git branch -M main
-
-# Wypchnij kod na GitHuba
-git push -u origin main
-```
-
-### Przykład z Twoimi Danymi:
-
-```powershell
-# Jeśli Twój username to TomaszCieslar i nazwa repo to AlpacaTutorial-13-PositionSizing
-git remote add origin https://github.com/TomaszCieslar/AlpacaTutorial-13-PositionSizing.git
-git branch -M main
-git push -u origin main
-```
-
-### Opcja Alternatywna: Użycie SSH
-
-Jeśli masz skonfigurowane klucze SSH na GitHubie:
-
-```powershell
-git remote add origin git@github.com:YOUR_USERNAME/REPO_NAME.git
-git branch -M main
 git push -u origin main
 ```
 
@@ -127,14 +153,17 @@ Jeśli wolisz SSH:
 
 ## ✅ Weryfikacja
 
-Po wykonaniu `git push`, odśwież stronę swojego repozytorium na GitHubie. Powinieneś zobaczyć:
+Po wykonaniu `git push`, odśwież stronę repozytorium na GitHubie: 
+**https://github.com/TomaszCieslar/AlpacaTutorial**
 
-- 📄 **README.md** wyświetlony jako główna strona z pełną dokumentacją
-- 🐍 **dynamic_sizing_bot.py** - Kod bota
-- ⚙️ **config.example.py** - Szablon konfiguracji
-- 📋 **requirements.txt** - Zależności
-- 📖 **instructions.md** - Instrukcje tutoriala
-- 🔒 **.gitignore** - Plik ochronny
+Powinieneś zobaczyć nowy folder obok innych tutoriali:
+- 📁 **AlpacaXX/** - Twój nowy tutorial
+  - 🐍 Główny skrypt bota
+  - 📄 README.md
+  - ⚙️ config.example.py
+  - 📋 requirements.txt
+  - 📖 instructions.md
+  - 🔒 .gitignore
 
 ## 🔒 Bezpieczeństwo - Co Jest Chronione
 
@@ -152,47 +181,41 @@ Po wykonaniu `git push`, odśwież stronę swojego repozytorium na GitHubie. Pow
 
 ## 🎨 Upiększanie Repozytorium na GitHubie
 
-### 1. Dodaj Opis (About)
+### 1. Dodaj Opis (About) - Tylko jeśli tworzysz nowe repo
 Na stronie repozytorium:
 1. Kliknij ikonę ⚙️ obok "About"
-2. Dodaj opis: `Professional-grade position sizing for Alpaca trading bots`
+2. Dodaj opis: `Complete Alpaca Trading Course - Python algorithmic trading tutorials`
 3. Dodaj topics (tagi):
    - `alpaca`
    - `trading-bot`
    - `python`
    - `algorithmic-trading`
-   - `position-sizing`
+   - `tutorial`
    - `risk-management`
    - `paper-trading`
    - `educational`
 
-### 2. Opcjonalnie: Dodaj GitHub Pages
-1. Settings → Pages
-2. Source: Deploy from a branch
-3. Branch: main → / (root)
-4. Save
-5. README.md będzie dostępny jako strona internetowa!
-
 ## 🆘 Rozwiązywanie Problemów
 
 ### Problem: "fatal: not a git repository"
-**Rozwiązanie**: 
+**Rozwiązanie**: Upewnij się, że jesteś w głównym folderze AlpacaTutorial:
 ```powershell
-cd "C:\Users\tcieslar004\OneDrive - PwC\Desktop\Projekty\AlpacaTradingCourse\AlpacaTutorial\Alpaca13"
-git init
+cd "C:\Users\tcieslar004\OneDrive - PwC\Desktop\Projekty\AlpacaTradingCourse\AlpacaTutorial"
+git status
 ```
 
-### Problem: "Repository not found"
-**Rozwiązanie**: Sprawdź czy:
-1. Repozytorium zostało utworzone na GitHubie
-2. Nazwa w URL jest dokładnie taka sama jak na GitHubie
-3. Jesteś zalogowany na właściwe konto
+### Problem: Folder jest submodułem (ma własny .git)
+**Rozwiązanie**: Usuń lokalny .git z folderu tutoriala:
+```powershell
+Remove-Item -Recurse -Force "AlpacaXX\.git"
+git add AlpacaXX/
+```
 
 ### Problem: "Updates were rejected"
-**Rozwiązanie**: Jeśli przypadkowo zainicjalizowałeś repo z README:
+**Rozwiązanie**: Pociągnij najnowsze zmiany przed push:
 ```powershell
-git pull origin main --allow-unrelated-histories
-git push -u origin main
+git pull origin main
+git push origin main
 ```
 
 ### Problem: "Permission denied"
@@ -205,48 +228,99 @@ git push -u origin main
 **Rozwiązanie**: 
 ```powershell
 # Usuń z trackingu (ale nie usuwaj pliku lokalnie)
-git rm --cached config.py
+git rm --cached AlpacaXX/config.py
 
-# Sprawdź czy .gitignore zawiera config.py
-cat .gitignore
+# Sprawdź czy .gitignore w folderze zawiera config.py
+cat AlpacaXX/.gitignore
 
 # Commit zmianę
 git commit -m "Remove config.py from tracking"
 git push
 ```
 
-## 📊 Statystyki Tutoriala
+### Problem: Conflict przy pull
+**Rozwiązanie**: 
+```powershell
+# Zobacz jakie pliki są w konflikcie
+git status
 
-Po opublikowaniu Twoje repozytorium będzie zawierać:
-- **1 główny skrypt**: `dynamic_sizing_bot.py` (~280 linii)
-- **8 funkcji**: Wszystkie z czytelnymi nazwami i komentarzami
-- **1 kluczową formułę**: Professional position sizing
-- **4 pliki dokumentacji**: README, instructions, HOW_TO_PUBLISH, config.example
-- **100% bezpieczeństwo**: Klucze API chronione
+# Możesz zachować swoje zmiany
+git add .
+git commit -m "Resolve conflicts"
+git push
+```
+
+## 📊 Struktura Repozytorium
+
+Po opublikowaniu wielu tutoriali, Twoje repozytorium będzie miało strukturę:
+
+```
+AlpacaTutorial/
+├── Alpaca02/
+│   ├── [skrypt].py
+│   ├── README.md
+│   └── ...
+├── Alpaca13/
+│   ├── dynamic_sizing_bot.py
+│   ├── README.md
+│   └── ...
+├── Alpaca14/
+│   ├── [skrypt].py
+│   ├── README.md
+│   └── ...
+├── .gitignore
+└── README.md
+```
+
+Każdy folder to osobny, kompletny tutorial z pełną dokumentacją!
 
 ## 🎯 Po Publikacji
 
-1. **Udostępnij link**: Możesz teraz udostępnić swój tutorial innym!
-2. **Kontynuuj naukę**: Pracuj nad kolejnymi tutorialami
-3. **Śledź zmiany**: Wszystkie przyszłe zmiany możesz commitować i pushować
-4. **Portfolio**: To realne portfolio projektu z algorytmicznego tradingu!
+1. **Udostępnij link**: https://github.com/TomaszCieslar/AlpacaTutorial
+2. **Kontynuuj naukę**: Dodawaj kolejne tutoriale (Alpaca14, Alpaca15, ...)
+3. **Portfolio**: Buduj portfolio projektów z algorytmicznego tradingu!
+4. **Organizacja**: Wszystkie tutoriale w jednym miejscu, łatwo dostępne
 
-## 🔄 Aktualizowanie Repozytorium
+## 🔄 Dodawanie Kolejnych Tutoriali
 
-Jeśli wprowadzisz zmiany w przyszłości:
+Proces jest zawsze taki sam:
 
 ```powershell
-# Przejdź do folderu
-cd "C:\Users\tcieslar004\OneDrive - PwC\Desktop\Projekty\AlpacaTradingCourse\AlpacaTutorial\Alpaca13"
+# 1. Przejdź do głównego folderu
+cd "C:\Users\tcieslar004\OneDrive - PwC\Desktop\Projekty\AlpacaTradingCourse\AlpacaTutorial"
 
-# Dodaj zmienione pliki
-git add .
+# 2. Usuń lokalny .git z nowego tutoriala (jeśli istnieje)
+Remove-Item -Recurse -Force "AlpacaXX\.git"
 
-# Commit z opisem zmian
-git commit -m "Opis zmian"
+# 3. Dodaj folder
+git add AlpacaXX/
 
-# Wypchnij na GitHuba
-git push
+# 4. Commit
+git commit -m "Add Tutorial XX (AlpacaXX) - Nazwa Tutoriala"
+
+# 5. Push
+git push origin main
+```
+
+## 🔄 Aktualizowanie Istniejącego Tutoriala
+
+Jeśli wprowadzisz zmiany w już opublikowanym tutorialu:
+
+```powershell
+# 1. Przejdź do głównego folderu
+cd "C:\Users\tcieslar004\OneDrive - PwC\Desktop\Projekty\AlpacaTradingCourse\AlpacaTutorial"
+
+# 2. Sprawdź co się zmieniło
+git status
+
+# 3. Dodaj zmienione pliki
+git add AlpacaXX/
+
+# 4. Commit z opisem zmian
+git commit -m "Update Tutorial XX: Opis zmian"
+
+# 5. Push
+git push origin main
 ```
 
 ## 📞 Potrzebujesz Pomocy?
@@ -259,9 +333,22 @@ Jeśli napotkasz problemy:
 
 ---
 
+## 📋 Quick Reference - Publikacja Nowego Tutoriala
+
+```powershell
+# Szybka ściągawka (skopiuj i użyj, zastępując XX numerem tutoriala)
+cd "C:\Users\tcieslar004\OneDrive - PwC\Desktop\Projekty\AlpacaTradingCourse\AlpacaTutorial"
+Remove-Item -Recurse -Force "AlpacaXX\.git"
+git add AlpacaXX/
+git commit -m "Add Tutorial XX (AlpacaXX) - Nazwa Tutoriala"
+git push origin main
+```
+
+---
+
 **Gotowe do publikacji!** 🚀 
 
-Ten tutorial pokazuje profesjonalną technikę position sizing - coś, co odróżnia amatorów od profesjonalistów w tradingu. Dziękuję, że dzielisz się wiedzą z innymi!
+Struktura z wieloma folderami (Alpaca13, Alpaca14, Alpaca15...) w jednym repozytorium jest najlepszą metodą organizacji serii tutoriali. Każdy folder jest kompletnym, niezależnym tutorialem!
 
 **"Risk comes from not knowing what you're doing." - Warren Buffett**
 
