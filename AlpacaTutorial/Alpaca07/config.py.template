@@ -1,0 +1,15 @@
+# config.py
+# WARNING: This file contains sensitive API credentials.
+# DO NOT commit this file to version control (it's in .gitignore)
+
+# Alpaca API Credentials
+# Get these from: https://app.alpaca.markets/paper/dashboard/overview
+API_KEY = "YOUR_API_KEY_HERE"
+SECRET_KEY = "YOUR_SECRET_KEY_HERE"
+
+# Base URL for Alpaca API
+# Use paper trading URL for learning (default)
+# Paper trading URL: https://paper-api.alpaca.markets
+# Live trading URL: https://api.alpaca.markets
+BASE_URL = "https://paper-api.alpaca.markets"
+

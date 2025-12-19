@@ -1,0 +1,10 @@
+# Alpaca01: Generating API Keys
+# This tutorial is instructional only and doesn't require any Python packages
+# However, we include common dependencies that will be needed in future tutorials
+
+# No dependencies required for this tutorial
+# Future tutorials will require:
+# alpaca-trade-api
+# pandas
+
+
