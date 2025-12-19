@@ -48,3 +48,7 @@ Thumbs.db
 HOW_TO_PUBLISH.md
 PUBLISH_GITHUB.md
 **/.gitignore
+
+# Instruction files (moved to Instructions folder)
+Alpaca*/instruction*.md
+Alpaca*/Instruction*.md
