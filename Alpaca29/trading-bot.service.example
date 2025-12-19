@@ -1,0 +1,19 @@
+[Unit]
+Description=Alpaca Trading Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root/YOUR_PROJECT_FOLDER
+Environment="PATH=/root/YOUR_PROJECT_FOLDER/venv/bin"
+ExecStart=/root/YOUR_PROJECT_FOLDER/venv/bin/python /root/YOUR_PROJECT_FOLDER/YOUR_BOT_SCRIPT.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+
