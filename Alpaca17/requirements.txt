@@ -1,0 +1,4 @@
+alpaca-trade-api==3.0.2
+pandas==2.1.4
+pandas-ta==0.3.14b0
+

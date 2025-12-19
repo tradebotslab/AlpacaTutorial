@@ -1,0 +1,13 @@
+{
+  "api_key": "YOUR_API_KEY_HERE",
+  "api_secret": "YOUR_API_SECRET_HERE",
+  "paper_trading": true,
+  "trade_symbol": "SPY",
+  "trade_quantity": 10,
+  "strategy_parameters": {
+    "short_window": 40,
+    "long_window": 100
+  },
+  "check_interval_seconds": 300
+}
+

@@ -1,0 +1,15 @@
+# config.py.example
+# Copy this file to config.py and fill in your Alpaca API credentials
+# IMPORTANT: config.py is in .gitignore and will NOT be published to GitHub
+
+# Get your API keys from: https://app.alpaca.markets/paper/dashboard/overview
+# Paper Trading API Keys (for testing without real money)
+API_KEY = "YOUR_API_KEY_HERE"
+SECRET_KEY = "YOUR_SECRET_KEY_HERE"
+
+# Paper Trading Base URL (default for paper trading)
+BASE_URL = "https://paper-api.alpaca.markets"
+
+# For live trading, use:
+# BASE_URL = "https://api.alpaca.markets"
+# WARNING: Only use live trading after thorough testing in paper mode!
